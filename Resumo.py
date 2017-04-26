@@ -6,18 +6,22 @@ class Resumo(object):
 		self.ano=ano
 		self.categoria=categoria
 
-	def filtraCategoria(self):
+	def totalCategoria(self):
 		arq=open("dados.txt","r")
+		total=0.0
 		for linha in arq:
 			valores=linha.split()
 			if valores[0]==self.ano and valores[1]==self.mes and valores[3]==self.categoria:
-				print valores
+				total+=(float(valores[6]))
 		arq.close()
+		return total
 
 	def filtraAnoMes(self):
 		arq=open("dados.txt","r")
+		lista=[]
 		for linha in arq:
 			valores=linha.split()
 			if valores[0]==self.ano and valores[1]==self.mes:
-				print valores
+				lista.append(valores)
 		arq.close()
+		return lista

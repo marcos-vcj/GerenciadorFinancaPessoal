@@ -9,7 +9,9 @@ cat=Dados.categorias(test)
 fun=Dados.fundos(test) 
 print fun
 print cat
-res=Resumo('2017','01','Farmacia')
-Resumo.filtraCategoria(res)
-#f=Fundo('2017','01','Itau','-200')
-#Fundo.renda(f)
+res=Resumo('2017','01','Mercado')
+tc=Resumo.totalCategoria(res)
+print tc
+f=Fundo('2017','01','Itau')
+total=Fundo.rendaMes(f)
+print total
